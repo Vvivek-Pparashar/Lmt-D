@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import LoginForm from './components/Login Page/LoginForm.jsx'
 import "./App.css";
 
 const App = () => {
@@ -39,27 +40,31 @@ const App = () => {
     // console.log(ele.data);
   };
   return (
-    <div className="m-l">
-      <div className="m-l-c">
-        <input
-          type="email"
-          placeholder="email"
-          value={data.username}
-          onChange={(x) => {
-            setData({ ...data, username: x.target.value });
-          }}
-        />
-        <input
-          type="password"
-          placeholder="password"
-          value={data.password}
-          onChange={(x) => {
-            setData({ ...data, password: x.target.value });
-          }}
-        />
-        <button onClick={handleClick}>Login</button>
-      </div>
-    </div>
+    <>
+      <LoginForm/>
+    </>
+    // <div className="m-l">
+    //   <div className="m-l-c">
+    //     <input
+    //       type="email"
+    //       placeholder="email"
+    //       value={data.username}
+    //       onChange={(x) => {
+    //         setData({ ...data, username: x.target.value });
+    //       }}
+    //     />
+    //     <input
+    //       type="password"
+    //       placeholder="password"
+    //       value={data.password}
+    //       onChange={(x) => {
+    //         setData({ ...data, password: x.target.value });
+    //       }}
+    //     />
+    //     <button onClick={handleClick}>Login</button>
+    //   </div>
+    // </div>
+    
   );
 };
 

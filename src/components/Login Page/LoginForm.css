@@ -1,0 +1,112 @@
+.m-l {
+  min-height: 120vh;
+  height: 100%;
+  width: 100vw;
+  background-color: #B6B6B6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: -70px;
+  padding-top: 90px;
+  padding-bottom: 50px;
+}
+
+.logo {
+  height: 90px;
+  width: 500px;
+}
+
+.m-l-f {
+  /* height: 450px; */
+  background-color: #eaeaea;
+  width: 400px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: rgb(74, 72, 72);
+  /* border-radius: 10px; */
+  -webkit-box-shadow: 4px 3px 17px -6px rgba(64, 63, 64, 1);
+  -moz-box-shadow: 4px 3px 17px -6px rgba(64, 63, 64, 1);
+  box-shadow: 4px 3px 17px -6px rgba(64, 63, 64, 1);
+  /* margin-bottom: 50px; */
+}
+
+.m-l-f h1 {
+  align-self: center;
+  border-bottom: 1px solid;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.form-inputs h2 {
+  font-weight: 200;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.m-l-b {
+  background-color: #0066FE;
+  width: 100px;
+  text-align: center;
+  align-self: center;
+  color: rgb(192, 229, 250);
+  border-radius: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.m-l-b:active {
+  background-color: #014fc5;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-inputs div input {
+  padding: 10px;
+  width: 100%;
+}
+
+.radio-btn {
+  display: flex;
+  gap: 20px;
+}
+
+#userid,
+#password {
+  color: black;
+  border: none;
+}
+
+@media screen and (max-width: 480px) {
+  .m-l {
+      margin-top: -150px;
+  }
+
+  .logo {
+      width: 350px;
+  }
+
+  .m-l-f {
+      width: 350px;
+  }
+}
+
+@media screen and (max-width: 720px) and (min-width: 480px) {
+  .m-l {
+      margin-top: -100px;
+  }
+
+  .logo {
+      width: 400px;
+  }
+}
