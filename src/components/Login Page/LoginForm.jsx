@@ -1,25 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   changeUsername,
   changePassword,
   changeAdmin,
+  changeInitial,
 } from "../../slice/loginFormSlice";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./LoginForm.css";
+import LoadingPage from "./LoadingPage";
 
 const LoginForm = () => {
   const username = useSelector((state) => state.loginForm.username);
   const password = useSelector((state) => state.loginForm.password);
   const admin = useSelector((state) => state.loginForm.admin);
-  
+
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleClick = async ()=> {
-    let user = (admin === true ? "admin" : "employee");
-    const allUser = await axios.get(`https://lmt-d-server.vercel.app/api/${user}`);
+  const handleClick = async () => {
+    setLoading(true);
+    let user = admin === true ? "admin" : "employee";
+    const allUser = await axios.get(
+      `https://lmt-d-server.vercel.app/api/${user}`
+    );
 
     const number = allUser.data.length;
     const users = allUser.data;
@@ -27,17 +34,23 @@ const LoginForm = () => {
     let flag = 1;
 
     for (let i = 0; i < number; i++) {
-      if (
-        users[i].username === username &&
-        users[i].password === password
-      ) {
-        navigate(`/${user}`)
+      if (users[i].username === username && users[i].password === password) {
+        navigate(`/${user}`);
         flag = 0;
       }
     }
-  }
+
+    dispatch(changeInitial());
+
+    setLoading(false);
+
+    if (flag === 1) {
+      alert("Wrong Username or Password")
+    }
+  };
   return (
     <div className="m-l">
+      {loading && <LoadingPage />}
       <img
         src="../../../assests/login/companyLogo.png"
         alt="lmt-d"
@@ -89,7 +102,9 @@ const LoginForm = () => {
             }}
           />
         </div>
-        <div className="m-l-b" onClick={handleClick}>LogIN</div>
+        <div className="m-l-b" onClick={handleClick}>
+          LogIN
+        </div>
       </div>
     </div>
   );

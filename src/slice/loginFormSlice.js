@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   username: "",
   password: "",
-  admin:false
+  admin: false,
 };
 
 export const loginFormSlice = createSlice({
@@ -18,16 +18,18 @@ export const loginFormSlice = createSlice({
       state.password = action.payload;
     },
 
-    changeAdmin : (state, action) => {
+    changeAdmin: (state, action) => {
       state.admin = action.payload;
-    }
+    },
+
+    changeInitial: (state) => {
+      state.password = "";
+      state.username = "";
+    },
   },
 });
 
-export const {
-  changePassword,
-  changeUsername,
-  changeAdmin
-} = loginFormSlice.actions;
+export const { changePassword, changeUsername, changeAdmin, changeInitial } =
+  loginFormSlice.actions;
 
 export default loginFormSlice.reducer;
