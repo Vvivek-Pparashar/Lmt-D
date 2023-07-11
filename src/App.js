@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import LoginForm from './components/Login Page/LoginForm.jsx'
+import LoginForm from "./components/Login Page/LoginForm.jsx";
 import "./App.css";
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
   const navigate = useNavigate();
 
   const handleClick = async () => {
-    const ele = await axios.get("http://localhost:3000/api/products");
+    const ele = await axios.get("https://lmt-d-server.vercel.app/api/products");
 
     const n = ele.data.length;
     const users = ele.data;
@@ -23,11 +23,11 @@ const App = () => {
       ) {
         console.log("YEEEEEEEEES");
 
-        console.log(users[i].admin)
+        console.log(users[i].admin);
         if (users[i].admin === true) {
           navigate("/admin");
-        }else{
-          navigate("/employee"); 
+        } else {
+          navigate("/employee");
         }
 
         flag = 0;
@@ -41,30 +41,8 @@ const App = () => {
   };
   return (
     <>
-      <LoginForm/>
+      <LoginForm />
     </>
-    // <div className="m-l">
-    //   <div className="m-l-c">
-    //     <input
-    //       type="email"
-    //       placeholder="email"
-    //       value={data.username}
-    //       onChange={(x) => {
-    //         setData({ ...data, username: x.target.value });
-    //       }}
-    //     />
-    //     <input
-    //       type="password"
-    //       placeholder="password"
-    //       value={data.password}
-    //       onChange={(x) => {
-    //         setData({ ...data, password: x.target.value });
-    //       }}
-    //     />
-    //     <button onClick={handleClick}>Login</button>
-    //   </div>
-    // </div>
-    
   );
 };
 
