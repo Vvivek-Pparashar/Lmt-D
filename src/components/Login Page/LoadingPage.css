@@ -1,6 +1,3 @@
-/* $color1: #de732c;
-$color2: #142960;
-$color3: #dce8f3; */
 
 /* main loading page login page */
 .m-lp-lp{
@@ -29,7 +26,7 @@ $color3: #dce8f3; */
   position: relative;
   animation: jump 0.8s cubic-bezier(0.7, 0.31, 1, 1.89) infinite alternate;
 }
-svg {
+.svg {
   fill: black;
   width: 100px;
   animation: roll 0.8s linear 0.2s infinite;

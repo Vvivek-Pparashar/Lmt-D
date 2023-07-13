@@ -37,6 +37,7 @@ const LoginForm = () => {
       if (users[i].username === username && users[i].password === password) {
         navigate(`/${user}`);
         flag = 0;
+        break;
       }
     }
 
