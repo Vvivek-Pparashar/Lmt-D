@@ -25,8 +25,8 @@ const LoginForm = () => {
     setLoading(true);
     const user = admin === true ? "admin" : "employee";
 const apiUrl = admin === true
-  ? `https://lmt-d-server.vercel.app/api/admin/${user}`
-  : `https://lmt-d-server.vercel.app/api/employee/${user}`;
+  ? `https://lmt-d-server.vercel.app/api/admin/${username}`
+  : `https://lmt-d-server.vercel.app/api/employee/${username}`;
 
 const User = await axios.get(apiUrl);
 
@@ -35,7 +35,7 @@ const User = await axios.get(apiUrl);
     const res_username = userData.username;
     const res_password = userData.password
 
-
+    console.log(res_password,res_username,username,password)
     let flag = 1;
 
    
@@ -44,10 +44,10 @@ const User = await axios.get(apiUrl);
         sessionStorage.setItem("admin", admin ? "admin" : "employee");
         flag = 0;
         if (admin ===true){
-          navigate(`/admin/${user}`)
+          navigate(`/admin/${username}`)
         }
         else{
-          navigate(`/employee/${user}`);
+          navigate(`/employee/${username}`);
         }
        
      
