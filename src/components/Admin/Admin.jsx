@@ -3,15 +3,19 @@ import { UserAddOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { Row, Col } from "antd";
 import "./Admin.css";
-
+//import { useParams } from "react-router-dom";//
 // const { Content } = Layout;
 
 const Admin = () => {
+
+
+  //const  name  = useParams().username; // get admin username
+
   return (
     <>
       <div className="m-admn-nav">
         <h1>LMT Delhi</h1>
-        <h1>Hello, Admin</h1>
+        <h1>Hello,Admin</h1>
       </div>
 
       <div className="m-admn-optn">

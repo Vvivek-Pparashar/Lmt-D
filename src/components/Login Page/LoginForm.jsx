@@ -23,23 +23,37 @@ const LoginForm = () => {
 
   const handleClick = async () => {
     setLoading(true);
-    let user = admin === true ? "admin" : "employee";
-    const allUser = await axios.get(
-      `https://lmt-d-server.vercel.app/api/${user}`
-    );
+    const user = admin === true ? "admin" : "employee";
+const apiUrl = admin === true
+  ? `https://lmt-d-server.vercel.app/api/admin/${user}`
+  : `https://lmt-d-server.vercel.app/api/employee/${user}`;
 
-    const number = allUser.data.length;
-    const users = allUser.data;
+const User = await axios.get(apiUrl);
+
+    const userData = User.data;
+   
+    const res_username = userData.username;
+    const res_password = userData.password
+
 
     let flag = 1;
 
-    for (let i = 0; i < number; i++) {
-      if (users[i].username === username && users[i].password === password) {
-        navigate(`/${user}`);
+   
+      if (res_username === username && res_password === password) {
+        sessionStorage.setItem("username", username);
+        sessionStorage.setItem("admin", admin ? "admin" : "employee");
         flag = 0;
-        break;
+        if (admin ===true){
+          navigate(`/admin/${user}`)
+        }
+        else{
+          navigate(`/employee/${user}`);
+        }
+       
+     
+     
       }
-    }
+    
 
     dispatch(changeInitial());
 

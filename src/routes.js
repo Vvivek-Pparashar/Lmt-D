@@ -11,11 +11,11 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/employee",
+    path: "/employee/:username",
     element: <Employee />,
   },
   {
-    path: "/admin",
+    path: "/admin/:username",
     element: <Admin />,
     
   },
