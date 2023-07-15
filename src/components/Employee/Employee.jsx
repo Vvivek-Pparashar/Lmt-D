@@ -49,7 +49,7 @@ const Employee = () => {
 
   const handleAddAttendance = async () => {
     try {
-      const response = await axios.get(`https://lmt-d-server.vercel.app/api/employee/attendance/${username}`);
+      const response = await axios.get(`https://lmt-d-server.vercel.app/api/employee/attendance/${username}`); // will mark attendance as soon as page opens 
       const { message } = response.data;
   
       if (response.status === 200 && message === "Attendance already marked for today") {
