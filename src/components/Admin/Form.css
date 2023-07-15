@@ -1,0 +1,12 @@
+.m_eform_active {
+  display: block;
+  margin-top: 30px;
+}
+
+.m_eform_not_active {
+  display: none;
+}
+
+.m_eform_btn_next{
+        background-color: blue;
+}
