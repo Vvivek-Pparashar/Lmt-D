@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Employee from "./components/Employee/Employee";
 import Admin from "./components/Admin/Admin";
+import AddEmployee from "./components/Admin/AddEmployee";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path : "/addEmployee",
-    element : <h1>Add Employee</h1>
+    element : <AddEmployee/>
   }
 ]);
 
