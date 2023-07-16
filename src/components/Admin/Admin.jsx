@@ -28,7 +28,7 @@ const Admin = () => {
                 lg={{ span: 6 }}
                 className="m-admn-optn-col"
               >
-                <Link to={"/addEmployee"} className="m-admn-optn-n">
+                <Link to={"/admin/addEmployee"} className="m-admn-optn-n">
                   <UserAddOutlined className="m-admn-optn-n-i" />
                   <p className="m-admn-optn-n-p">Add Employee</p>
                 </Link>

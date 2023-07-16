@@ -109,14 +109,26 @@ const Form3 = () => {
             }}
           />
         </Form.Item>
-        <Button
-          danger
-          onClick={() =>
-            dispatch(changeGivenState({ state: "page", value: 2 }))
-          }
+        <Form.Item
+          wrapperCol={{
+            offset: 8,
+            span: 16,
+          }}
         >
-          Previous
-        </Button>
+          <div className="m-lf-btn-wr">
+            <Button
+              danger
+              onClick={() =>
+                dispatch(changeGivenState({ state: "page", value: 2 }))
+              }
+            >
+              previous
+            </Button>
+            <Button type="primary" htmlType="submit">
+              Next
+            </Button>
+          </div>
+        </Form.Item>
       </Form>
     </div>
   );

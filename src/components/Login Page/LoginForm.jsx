@@ -23,45 +23,39 @@ const LoginForm = () => {
 
   const handleClick = async () => {
     setLoading(true);
- ///   const user = admin === true ? "admin" : "employee";
-const apiUrl = admin === true
-  ? `https://lmt-d-server.vercel.app/api/admin/${username}`
-  : `https://lmt-d-server.vercel.app/api/employee/${username}`;
+    ///   const user = admin === true ? "admin" : "employee";
+    const apiUrl =
+      admin === true
+        ? `https://lmt-d-server.vercel.app/api/admin/${username}`
+        : `https://lmt-d-server.vercel.app/api/employee/${username}`;
 
-const User = await axios.get(apiUrl);
+    const User = await axios.get(apiUrl);
 
     const userData = User.data;
-   
-    const res_username = userData.username;
-    const res_password = userData.password
 
-    
+    const res_username = userData.username;
+    const res_password = userData.password;
+
     let flag = 1;
 
-   
-      if (res_username === username && res_password === password) {
-        sessionStorage.setItem("username", username);
-        sessionStorage.setItem("admin", admin ? "admin" : "employee");
-        flag = 0;
-        
-        if (admin ===true){
-          navigate(`/admin/${username}`)
-        }
-        else{
-          navigate(`/employee/${username}`);
-        }
-       
-     
-     
+    if (res_username === username && res_password === password) {
+      sessionStorage.setItem("username", username);
+      sessionStorage.setItem("admin", admin ? "admin" : "employee");
+      flag = 0;
+
+      if (admin === true) {
+        navigate(`/admin/`);
+      } else {
+        navigate(`/employee/${username}`);
       }
-    
+    }
 
     dispatch(changeInitial());
 
     setLoading(false);
 
     if (flag === 1) {
-      alert("Wrong Username or Password")
+      alert("Wrong Username or Password");
     }
   };
   return (

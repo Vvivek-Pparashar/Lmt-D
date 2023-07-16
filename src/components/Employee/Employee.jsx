@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import {useNavigate, useParams } from 'react-router-dom';
 const Employee = () => {
   const [attendanceCount, setAttendanceCount] = useState(0);   // stored total attendace
   const [isAttendanceMarked, setIsAttendanceMarked] = useState(false); // check if attendance is marked disable or enable the button
@@ -8,6 +8,7 @@ const Employee = () => {
   const  username  = useParams().username;  // get username from the url
   const sessionUsername = sessionStorage.getItem("username"); 
  
+  const navigate = useNavigate();
 //--------------------------------------------Total attendance--------------------------------------------
   useEffect(() => {
     const fetchAttendanceCount = async () => {
@@ -64,7 +65,8 @@ const Employee = () => {
   };
 //------------------------------------------------ return not authenticates
 if (sessionUsername !== username) {
-  return <div>Not Authenticated</div>;
+  navigate("/")
+  return;
 }
 
 

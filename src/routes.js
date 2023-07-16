@@ -16,12 +16,12 @@ const router = createBrowserRouter([
     element: <Employee />,
   },
   {
-    path: "/admin/:username",
+    path: "/admin/",
     element: <Admin />,
     
   },
   {
-    path : "/addEmployee",
+    path : "/admin/addEmployee",
     element : <AddEmployee/>
   }
 ]);

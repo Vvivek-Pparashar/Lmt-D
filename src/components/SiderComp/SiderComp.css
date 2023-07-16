@@ -4,9 +4,10 @@
   position: sticky;
   top: 64px;
   left: 0px;
-  padding: 7px 30px;
+  padding: 7px 0px 7px 20px;
   border-right: 1px solid #dbdbdb;
   background-color: white;
+  /* background-color: aquamarine; */
   display: flex;
   flex-direction: column;
   gap: 20px;

@@ -11,7 +11,6 @@ const SiderComp = () => {
   return (
     <div className={`sider`}>
       <CloseOutlined className="sider-close-icon" />
-      <h3 className="filter-h3">Apply Filters</h3>
       <FilterComp />
     </div>
   );

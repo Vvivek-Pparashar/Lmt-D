@@ -47,7 +47,6 @@ const Form1 = ({ submit }) => {
             }}
           />
         </Form.Item>
-
         <Form.Item
           label="Application For"
           name="Application For"
@@ -71,7 +70,6 @@ const Form1 = ({ submit }) => {
             <Select.Option value="Other">Other</Select.Option>
           </Select>
         </Form.Item>
-
         <Form.Item
           label="Joining Branch"
           name="Joining Branch"
@@ -95,7 +93,6 @@ const Form1 = ({ submit }) => {
             <Select.Option value="Other">Other</Select.Option>
           </Select>
         </Form.Item>
-
         <Form.Item
           label="Joining Date"
           name="Joining Date"
@@ -116,7 +113,6 @@ const Form1 = ({ submit }) => {
             }}
           />
         </Form.Item>
-
         <Form.Item
           label="Salary"
           name="Salary"
@@ -134,7 +130,6 @@ const Form1 = ({ submit }) => {
             }}
           />
         </Form.Item>
-
         <Form.Item
           label="Experience"
           name="Experience"
@@ -158,7 +153,6 @@ const Form1 = ({ submit }) => {
             }}
           />
         </Form.Item>
-
         <Form.Item
           label="Under Group"
           name="Under Group"
@@ -182,9 +176,16 @@ const Form1 = ({ submit }) => {
             <Select.Option value="Other">Other</Select.Option>
           </Select>
         </Form.Item>
-        <Button htmlType="submit" type="primary">
-          Next
-        </Button>
+        <Form.Item
+          wrapperCol={{
+            offset: 8,
+            span: 16,
+          }}
+        >
+          <Button type="primary" htmlType="submit">
+            Next
+          </Button>
+        </Form.Item>
       </Form>
     </div>
   );

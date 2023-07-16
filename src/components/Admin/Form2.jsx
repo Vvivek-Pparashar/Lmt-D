@@ -7,7 +7,7 @@ const Form2 = () => {
   const dispatch = useDispatch();
   const page = useSelector((state) => state.addEmployee.page);
   const onFinish = () => {
-    dispatch(changeGivenState({ state: "page", value: 3 }))
+    dispatch(changeGivenState({ state: "page", value: 3 }));
   };
   return (
     <div className={`${page === 2 ? "m_eform_active" : "m_eform_not_active"}`}>
@@ -303,14 +303,26 @@ const Form2 = () => {
           </Select>
         </Form.Item>
 
-        <Button danger
-          onClick={() =>
-            dispatch(changeGivenState({ state: "page", value: 1 }))
-          }
+        <Form.Item
+          wrapperCol={{
+            offset: 8,
+            span: 16,
+          }}
         >
-          previous
-        </Button>
-        <Button htmlType="submit" type="primary">Next</Button>
+          <div className="m-lf-btn-wr">
+            <Button
+              danger
+              onClick={() =>
+                dispatch(changeGivenState({ state: "page", value: 1 }))
+              }
+            >
+              previous
+            </Button>
+            <Button type="primary" htmlType="submit">
+              Next
+            </Button>
+          </div>
+        </Form.Item>
       </Form>
     </div>
   );

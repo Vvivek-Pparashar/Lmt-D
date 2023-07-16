@@ -7,6 +7,13 @@
   display: none;
 }
 
-.m_eform_btn_next{
-        background-color: blue;
+.m-lf-btn-wr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* gap: 20px; */
+}
+
+.m_eform_btn_next {
+  background-color: blue;
 }
