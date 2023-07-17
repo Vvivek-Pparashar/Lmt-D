@@ -13,10 +13,10 @@ const Employee = () => {
   useEffect(() => {
     const fetchAttendanceCount = async () => {
       try {
-        const response = await axios.get(`https://lmt-d-server.vercel.app/api/employee/${username}`);
+        const response = await axios.get(`/api/employee/${username}`);
       
         const { attendance } = response.data;
-        
+  
         setAttendanceCount(attendance.length);
         setAttendanceDates(attendance.map(entry => entry.date.split("T")[0]));//setting dates in an array to display
       
@@ -34,8 +34,9 @@ const Employee = () => {
   useEffect(() => {
     const checkAttendance = async () => {
       try {
-        const response = await axios.get(`https://lmt-d-server.vercel.app/api/employee/attendance/${username}`);
+        const response = await axios.get(`/api/employee/attendance/${username}`);
         const { message } = response.data;
+        console.log(response.data)
   
         if (response.status === 200 && message === "Attendance already marked for today") {
           setIsAttendanceMarked(true);
@@ -50,7 +51,7 @@ const Employee = () => {
 
   const handleAddAttendance = async () => {
     try {
-      const response = await axios.get(`https://lmt-d-server.vercel.app/api/employee/attendance/${username}`); // will mark attendance as soon as page opens 
+      const response = await axios.post(`/api/employee/attendance/${username}`); // will mark attendance as soon as page opens 
       const { message } = response.data;
   
       if (response.status === 200 && message === "Attendance already marked for today") {
