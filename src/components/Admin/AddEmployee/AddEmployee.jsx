@@ -2,14 +2,12 @@ import React from "react";
 // import { UserAddOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { Row, Col } from "antd";
-import "./Admin.css";
-import adminRouteList from "./adminRouteList";
+import "../Admin.css";
+import addEmployeeRouteList from "./addEmployeeRouteList";
 //import { useParams } from "react-router-dom";//
 // const { Content } = Layout;
 
-const Admin = () => {
-
-
+const AddEmployee = () => {
   //const  name  = useParams().username; // get admin username
 
   return (
@@ -21,7 +19,7 @@ const Admin = () => {
 
       <div className="m-admn-optn">
         <Row gutter={[18, 1]} style={{ padding: "0 10px" }}>
-          {adminRouteList.map((e) => {
+          {addEmployeeRouteList.map((e) => {
             return (
               <Col
                 xs={{ span: 12 }}
@@ -29,7 +27,7 @@ const Admin = () => {
                 lg={{ span: 6 }}
                 className="m-admn-optn-col"
               >
-                <Link to={`${e.Route}`} className="m-admn-optn-n">
+                <Link to={`/admin/addEmployee/${e.Route}`} className="m-admn-optn-n">
                   {e.icon}
                   <p className="m-admn-optn-n-p">{e.Title}</p>
                 </Link>
@@ -42,4 +40,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default AddEmployee;

@@ -11,9 +11,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-left: 200px;
   /* gap: 20px; */
 }
 
-.m_eform_btn_next {
-  background-color: blue;
+@media only screen and (max-width: 750px) {
+  .m-lf-btn-wr {
+    padding-left: 0px;
+  }
 }

@@ -1,13 +1,27 @@
 import React from "react";
 import { InputNumber, Form, Input, Button } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { changeGivenState } from "../../slice/addEmployeeForm";
+import { changeGivenState } from "../../../../slice/addEmployeeForm";
+import axios from "axios";
 
 const Form3 = () => {
   const dispatch = useDispatch();
   const page = useSelector((state) => state.addEmployee.page);
+  const data = useSelector((state) => state.addEmployee);
 
-  const onFinish = (values) => {};
+  const onFinish = () => {
+    console.log(data);
+    axios
+      .post("https://lmt-d-server.vercel.app/api/employee", { ...data })
+      .then((res) => {
+        console.log(res);
+        // setModel(2);
+      })
+      .catch((err) => {
+        console.log(err);
+        // setModel(3);
+      });
+  };
   return (
     <div className={`${page === 3 ? "m_eform_active" : "m_eform_not_active"}`}>
       <Form
@@ -77,8 +91,6 @@ const Form3 = () => {
         >
           <Input
             // minLength={3}
-            defaultValue={"vivek"}
-            value="vivekk"
             onChange={(e) => {
               dispatch(
                 changeGivenState({
@@ -109,12 +121,7 @@ const Form3 = () => {
             }}
           />
         </Form.Item>
-        <Form.Item
-          wrapperCol={{
-            offset: 8,
-            span: 16,
-          }}
-        >
+        <Form.Item>
           <div className="m-lf-btn-wr">
             <Button
               danger

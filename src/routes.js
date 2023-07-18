@@ -1,9 +1,11 @@
 import * as React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import Employee from "./components/Employee/Employee";
 import Admin from "./components/Admin/Admin";
-import AddEmployee from "./components/Admin/AddEmployee";
+import Employee from "./components/Employee/Employee";
+import AddEmployee from "./components/Admin/AddEmployee/AddEmployee.jsx";
+import NewJoining from "./components/Admin/AddEmployee/NewJoining/NewJoining";
+import ResignLoginPage from "./components/Admin/AddEmployee/Resign/ResignLoginPage";
 
 const router = createBrowserRouter([
   {
@@ -18,12 +20,51 @@ const router = createBrowserRouter([
   {
     path: "/admin/",
     element: <Admin />,
-    
   },
   {
-    path : "/admin/addEmployee",
-    element : <AddEmployee/>
-  }
+    path: "/admin/addEmployee",
+    element: <AddEmployee />,
+  },
+
+  {
+    path: "/admin/addEmployee/newJoining",
+    element: <NewJoining />,
+  },
+
+  {
+    path: "/admin/addEmployee/resign",
+    element: <ResignLoginPage />,
+  },
+
+  {
+    path: "/admin/addEmployee/resign",
+    element: "reign",
+  },
+
+  {
+    path: "/admin/attendance",
+    element: "attendance",
+  },
+
+  {
+    path: "/admin/salaryOfEmployee",
+    element: "salaryOfEmployee",
+  },
+
+  {
+    path: "/admin/salaryIncrement",
+    element: "salaryIncrement",
+  },
+
+  {
+    path: "/admin/leaveFrom",
+    element: "leaveFrom",
+  },
+
+  {
+    path: "/admin/report",
+    element: "report",
+  },
 ]);
 
 export default router;

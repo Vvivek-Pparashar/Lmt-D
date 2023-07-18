@@ -1,7 +1,7 @@
 import React from "react";
 import { InputNumber, Form, Select, DatePicker, Button } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { changeGivenState } from "../../slice/addEmployeeForm";
+import { changeGivenState } from "../../../../slice/addEmployeeForm";
 import "./Form.css";
 
 const Form1 = ({ submit }) => {
@@ -176,15 +176,12 @@ const Form1 = ({ submit }) => {
             <Select.Option value="Other">Other</Select.Option>
           </Select>
         </Form.Item>
-        <Form.Item
-          wrapperCol={{
-            offset: 8,
-            span: 16,
-          }}
-        >
-          <Button type="primary" htmlType="submit">
-            Next
-          </Button>
+        <Form.Item>
+          <div className="m-lf-btn-wr">
+            <Button type="primary" htmlType="submit">
+              Next
+            </Button>
+          </div>
         </Form.Item>
       </Form>
     </div>

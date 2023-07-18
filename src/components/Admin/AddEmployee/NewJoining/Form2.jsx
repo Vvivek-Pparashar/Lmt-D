@@ -1,7 +1,7 @@
 import React from "react";
 import { InputNumber, Form, Input, Select, DatePicker, Button } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { changeGivenState } from "../../slice/addEmployeeForm";
+import { changeGivenState } from "../../../../slice/addEmployeeForm";
 
 const Form2 = () => {
   const dispatch = useDispatch();
@@ -124,6 +124,7 @@ const Form2 = () => {
           ]}
         >
           <InputNumber
+            style={{ width: 160 }}
             onChange={(e) => {
               dispatch(changeGivenState({ state: "pincode", value: e }));
             }}
@@ -303,12 +304,7 @@ const Form2 = () => {
           </Select>
         </Form.Item>
 
-        <Form.Item
-          wrapperCol={{
-            offset: 8,
-            span: 16,
-          }}
-        >
+        <Form.Item>
           <div className="m-lf-btn-wr">
             <Button
               danger
