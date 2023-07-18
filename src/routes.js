@@ -2,7 +2,7 @@ import * as React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Admin from "./components/Admin/Admin";
-import Employee from "./components/Employee/Employee";
+// import Employee from "./components/Employee/Employee";
 import AddEmployee from "./components/Admin/AddEmployee/AddEmployee.jsx";
 import NewJoining from "./components/Admin/AddEmployee/NewJoining/NewJoining";
 import ResignLoginPage from "./components/Admin/AddEmployee/Resign/ResignLoginPage";
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
 
   {
     path: "/employee/:username",
-    element: <Employee />,
+    element: "hlo",
   },
   {
     path: "/admin/",
