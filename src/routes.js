@@ -6,6 +6,7 @@ import Admin from "./components/Admin/Admin";
 import AddEmployee from "./components/Admin/AddEmployee/AddEmployee.jsx";
 import NewJoining from "./components/Admin/AddEmployee/NewJoining/NewJoining";
 import ResignLoginPage from "./components/Admin/AddEmployee/Resign/ResignLoginPage";
+import SalaryOfEmployee from "./components/Admin/SalaryOfEmployee/SalaryOfEmployee";
 
 const router = createBrowserRouter([
   {
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
 
   {
     path: "/admin/salaryOfEmployee",
-    element: "salaryOfEmployee",
+    element: <SalaryOfEmployee/>,
   },
 
   {

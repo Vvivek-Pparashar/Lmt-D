@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Row, Col } from "antd";
 import "../Admin.css";
 import addEmployeeRouteList from "./addEmployeeRouteList";
+import AdminNavBar from "../AdminNavBar/AdminNavBar";
 //import { useParams } from "react-router-dom";//
 // const { Content } = Layout;
 
@@ -12,10 +13,7 @@ const AddEmployee = () => {
 
   return (
     <>
-      <div className="m-admn-nav">
-        <h1>LMT Delhi</h1>
-        <h1>Hello,Admin</h1>
-      </div>
+      <AdminNavBar />
 
       <div className="m-admn-optn">
         <Row gutter={[18, 1]} style={{ padding: "0 10px" }}>
@@ -27,7 +25,10 @@ const AddEmployee = () => {
                 lg={{ span: 6 }}
                 className="m-admn-optn-col"
               >
-                <Link to={`/admin/addEmployee/${e.Route}`} className="m-admn-optn-n">
+                <Link
+                  to={`/admin/addEmployee/${e.Route}`}
+                  className="m-admn-optn-n"
+                >
                   {e.icon}
                   <p className="m-admn-optn-n-p">{e.Title}</p>
                 </Link>
