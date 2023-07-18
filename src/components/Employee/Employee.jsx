@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {useNavigate, useParams } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar';
+import RadialCharts from "../Chart/RadialCharts"
+import Employee_card from './Employee_card';
+import "./Employee.css"
+// import CustomTileContent from '../Calendar/CustomTileContent';
 const Employee = () => {
   const [attendanceCount, setAttendanceCount] = useState(0);   // stored total attendace
   const [isAttendanceMarked, setIsAttendanceMarked] = useState(false); // check if attendance is marked disable or enable the button
@@ -16,7 +21,7 @@ const Employee = () => {
         const response = await axios.get(`https://lmt-d-server.vercel.app/api/employee/${username}`);
       
         const { attendance } = response.data;
-        
+  
         setAttendanceCount(attendance.length);
         setAttendanceDates(attendance.map(entry => entry.date.split("T")[0]));//setting dates in an array to display
       
@@ -36,6 +41,7 @@ const Employee = () => {
       try {
         const response = await axios.get(`https://lmt-d-server.vercel.app/api/employee/attendance/${username}`);
         const { message } = response.data;
+        
   
         if (response.status === 200 && message === "Attendance already marked for today") {
           setIsAttendanceMarked(true);
@@ -50,7 +56,7 @@ const Employee = () => {
 
   const handleAddAttendance = async () => {
     try {
-      const response = await axios.get(`https://lmt-d-server.vercel.app/api/employee/attendance/${username}`); // will mark attendance as soon as page opens 
+      const response = await axios.post(`https://lmt-d-server.vercel.app/api/employee/attendance/${username}`); // will mark attendance as soon as page opens 
       const { message } = response.data;
   
       if (response.status === 200 && message === "Attendance already marked for today") {
@@ -64,16 +70,26 @@ const Employee = () => {
     }
   };
 //------------------------------------------------ return not authenticates
-if (sessionUsername !== username) {
-  navigate("/")
-  return;
-}
+// if (sessionUsername !== username) {
+//   navigate("/")
+//   return;
+// }
 
 
   //--------------------------------------------------return Employee page---------------------------------------------
   return (
     <div>
-      <h2>{username} Page</h2>
+      <Navbar Name = {username}/>
+      
+    <div className="u-info-wrap">
+      <div className="m-card"><Employee_card username={username} position={"Worker"}/></div>
+      <div className="m-chart"><RadialCharts/></div>
+    </div>
+    
+    {/* <CustomTileContent datesToMark={datesToMark} /> */}
+
+
+
       <div>
         <p>Attendance Count: {attendanceCount}</p>
         <button onClick={handleAddAttendance} disabled={isAttendanceMarked}>
