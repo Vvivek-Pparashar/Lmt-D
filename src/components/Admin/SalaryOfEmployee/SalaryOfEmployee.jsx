@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import AdminNavBar from "../AdminNavBar/AdminNavBar";
 import axios from "axios";
 import "./SalaryOfEmployee.css";
+import { Breadcrumb } from "antd";
+import { Link } from "react-router-dom";
 
 const SalaryOfEmployee = () => {
   const [data, setData] = useState([]);
@@ -20,6 +22,17 @@ const SalaryOfEmployee = () => {
     <>
       <AdminNavBar />
       <div className="m-ad-soe">
+      <Breadcrumb
+          style={{ marginBottom: "20px", marginLeft: "10px" }}
+          items={[
+            {
+              title: <Link to="/admin">Home</Link>,
+            },
+            {
+              title: "Salary Of Employee",
+            },
+          ]}
+        />
         <h1>Salary Detail's</h1>
         <div className="m-ad-soe-tble">
           <table className="m-ad-soe-tble-table">

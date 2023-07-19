@@ -38,7 +38,7 @@ const Form4 = () => {
     //       });
   };
   return (
-    <div className={`${page === 4 ? "m_eform_active" : "m_eform_not_active"}`}>
+    <div className={`${page === 4 ? "m_eform_active m_eform_page4" : "m_eform_not_active"}`}>
       <div className="m-nj-photo-cnt">
         <div className="m-nj-photo-cnt-photo">
           {passportImage !== "" ? (
@@ -100,9 +100,7 @@ const Form4 = () => {
           {familyImage !== "" ? (
             <Button
               onClick={() =>
-                dispatch(
-                  changeGivenState({ state: "familyImage", value: "" })
-                )
+                dispatch(changeGivenState({ state: "familyImage", value: "" }))
               }
             >
               Remove Image
@@ -123,8 +121,7 @@ const Form4 = () => {
           )}
         </div>
       </div>
-
-      <div className="m-lf-btn-wr">
+      <div className="m-lf-btn-wr m-form4-btn">
         <Button
           danger
           onClick={() =>
@@ -133,7 +130,7 @@ const Form4 = () => {
         >
           previous
         </Button>
-        <Button type="primary">Next</Button>
+        <Button type="primary">Submit</Button>
       </div>
     </div>
   );

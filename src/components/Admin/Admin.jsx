@@ -1,16 +1,11 @@
 import React from "react";
-// import { UserAddOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { Row, Col } from "antd";
+import { Row, Col, Breadcrumb } from "antd";
 import "./Admin.css";
 import adminRouteList from "./adminRouteList";
 import AdminNavBar from "./AdminNavBar/AdminNavBar";
-//import { useParams } from "react-router-dom";//
-// const { Content } = Layout;
 
 const Admin = () => {
-  //const  name  = useParams().username; // get admin username
-
   return (
     <>
       <AdminNavBar />

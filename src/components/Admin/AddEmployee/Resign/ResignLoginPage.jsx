@@ -1,13 +1,11 @@
 import React from "react";
 import "../../../Login Page/LoadingPage.css";
+import AdminNavBar from "../../AdminNavBar/AdminNavBar";
 
 const ResignLoginPage = () => {
   return (
     <>
-      <div className="m-admn-nav">
-        <h1>LMT Delhi</h1>
-        <h1>Hello, Admin</h1>
-      </div>
+      <AdminNavBar/>
       <div className="m-l">
         <div className="m-l-f">
           <h1>Resign FORM</h1>

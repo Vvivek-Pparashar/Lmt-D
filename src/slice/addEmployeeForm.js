@@ -28,7 +28,7 @@ const initialState = {
   bankBranch: "",
   passportImage: "",
   familyImage: "",
-  page: 4,
+  page: 1,
 };
 
 export const addEmployeeForm = createSlice({

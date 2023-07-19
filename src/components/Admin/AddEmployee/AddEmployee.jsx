@@ -1,7 +1,7 @@
 import React from "react";
 // import { UserAddOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { Row, Col } from "antd";
+import { Row, Col, Breadcrumb } from "antd";
 import "../Admin.css";
 import addEmployeeRouteList from "./addEmployeeRouteList";
 import AdminNavBar from "../AdminNavBar/AdminNavBar";
@@ -16,6 +16,18 @@ const AddEmployee = () => {
       <AdminNavBar />
 
       <div className="m-admn-optn">
+        <Breadcrumb
+          style={{ marginBottom: "20px", marginLeft: "10px" }}
+          items={[
+            {
+              title: <Link to="/admin">Home</Link>,
+            },
+            {
+              title: "Add Employee",
+            },
+          ]}
+        />
+
         <Row gutter={[18, 1]} style={{ padding: "0 10px" }}>
           {addEmployeeRouteList.map((e) => {
             return (
