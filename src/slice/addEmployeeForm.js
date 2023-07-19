@@ -26,7 +26,9 @@ const initialState = {
   bankName: "",
   bankIFSCCode: "",
   bankBranch: "",
-  page : 1
+  passportImage: "",
+  familyImage: "",
+  page: 4,
 };
 
 export const addEmployeeForm = createSlice({

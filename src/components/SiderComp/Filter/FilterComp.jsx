@@ -28,6 +28,12 @@ const FilterComp = () => {
             Bank Details
           </h3>
         </div>
+
+        <div className={`m-flc-opt-${page === 4 ? "active" : "not-active"}`}>
+          <h3 className={`m-flc-h3-${page === 4 ? "active" : "not-active"}`}>
+            Photo's
+          </h3>
+        </div>
       </div>
     </>
   );

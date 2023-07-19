@@ -1,6 +1,7 @@
 .m_eform_active {
   display: block;
   margin-top: 30px;
+  /* width: 100%; */
 }
 
 .m_eform_not_active {
@@ -13,6 +14,25 @@
   justify-content: space-between;
   padding-left: 200px;
   /* gap: 20px; */
+}
+
+.m-nj-photo-cnt {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.m-nj-photo-cnt-photo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* justify-content: center; */
+}
+
+.m-nj-photo-cnt-photo > img {
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 750px) {
