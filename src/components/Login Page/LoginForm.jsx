@@ -9,7 +9,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./LoginForm.css";
-import LoadingPage from "./LoadingPage";
+import LoadingPage from "../Loading Page/LoadingPage";
 
 const LoginForm = () => {
   const username = useSelector((state) => state.loginForm.username);

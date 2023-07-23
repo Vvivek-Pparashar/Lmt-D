@@ -1,19 +1,18 @@
 import React from "react";
-import { Layout } from "antd";
-import "../AddEmployee.css";
-import SiderComp from "../../../SiderComp/SiderComp";
-import { ScrollRestoration } from "react-router-dom";
 import AdminNavBar from "../../AdminNavBar/AdminNavBar";
-import ContainerComp from "./ContainerComp";
+import { Layout } from "antd";
+import { ScrollRestoration } from "react-router-dom";
+import SiderComp from "../../../SiderComp/SiderComp";
+import ContainerCompRj from "./ContainerCompRJ";
 
-const NewJoining = () => {
+const RejoinAfterLogin = () => {
   return (
     <>
       <Layout className="main">
         <AdminNavBar />
         <Layout className="site-layout" id="main-comp">
           <SiderComp />
-          <ContainerComp />
+          <ContainerCompRj />
         </Layout>
       </Layout>
       <ScrollRestoration />
@@ -21,4 +20,4 @@ const NewJoining = () => {
   );
 };
 
-export default NewJoining;
+export default RejoinAfterLogin;

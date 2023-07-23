@@ -17,25 +17,28 @@ const uploader = Uploader({
 
 const options = { multi: true };
 
-const Form4 = () => {
+const Form4Rj = () => {
   const dispatch = useDispatch();
   const page = useSelector((state) => state.addEmployee.page);
-  const data = useSelector((state) => state.addEmployee);
-  const passportImage = useSelector((state) => state.addEmployee.passportImage);
-  const familyImage = useSelector((state) => state.addEmployee.familyImage);
+  const data = useSelector((state) => state.reData.data);
+  const passportImage = useSelector((state) => state.reData.data.passportImage);
+  const familyImage = useSelector((state) => state.reData.data.familyImage);
 
   const onFinish = () => {
     console.log(data);
-    axios
-      .post("https://lmt-d-server.vercel.app/api/employee", { ...data })
-      .then((res) => {
-        console.log(res);
-        // setModel(2);
-      })
-      .catch((err) => {
-        console.log(err);
-        // setModel(3);
-      });
+    //     axios
+    //       .post("https://lmt-d-server.vercel.app/api/employee", { ...data })
+    //       .then((res) => {
+    //         console.log(res);
+    //         // setModel(2);
+    //       })
+    //       .catch((err) => {
+    //         console.log(err);
+    //         // setModel(3);
+    //       });
+
+    console.log("Finalll")
+    console.log(data);
   };
   return (
     <div
@@ -134,12 +137,10 @@ const Form4 = () => {
         >
           previous
         </Button>
-        <Button type="primary" onClick={onFinish}>
-          Submit
-        </Button>
+        <Button type="primary">Submit</Button>
       </div>
     </div>
   );
 };
 
-export default Form4;
+export default Form4Rj;

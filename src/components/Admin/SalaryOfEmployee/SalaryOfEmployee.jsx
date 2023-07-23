@@ -4,25 +4,30 @@ import axios from "axios";
 import "./SalaryOfEmployee.css";
 import { Breadcrumb } from "antd";
 import { Link } from "react-router-dom";
+import LoadingPage from "../../Loading Page/LoadingPage";
 
 const SalaryOfEmployee = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
       .get("https://lmt-d-server.vercel.app/api/employee")
       .then((res) => {
         console.log(res.data);
         setData(res.data);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
+        alert("Internet Error");
       });
   }, []);
   return (
     <>
+      {loading === true ? <LoadingPage /> : ""}
       <AdminNavBar />
       <div className="m-ad-soe">
-      <Breadcrumb
+        <Breadcrumb
           style={{ marginBottom: "20px", marginLeft: "10px" }}
           items={[
             {

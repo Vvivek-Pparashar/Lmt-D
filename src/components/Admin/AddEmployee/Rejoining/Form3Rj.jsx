@@ -2,15 +2,14 @@ import React from "react";
 import { InputNumber, Form, Input, Button } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { changeGivenState } from "../../../../slice/addEmployeeForm";
-import axios from "axios";
+import { changeGivenReState } from "../../../../slice/reDataSlice";
 
-const Form3 = () => {
+const Form3Rj = () => {
   const dispatch = useDispatch();
   const page = useSelector((state) => state.addEmployee.page);
-  const data = useSelector((state) => state.addEmployee);
+  const data = useSelector((state) => state.reData.data);
 
   const onFinish = () => {
-    console.log(data);
     dispatch(changeGivenState({ state: "page", value: 4 }));
   };
   return (
@@ -34,82 +33,67 @@ const Form3 = () => {
         <Form.Item
           label="Bank Account No."
           name="Bank Account No."
-          rules={[
-            {
-              required: true,
-              message: "Please input Bank Account No.",
-            },
-          ]}
         >
           <InputNumber
             style={{ width: 250 }}
             onChange={(e) => {
-              dispatch(changeGivenState({ state: "bankAccountNo", value: e }));
+              dispatch(changeGivenReState({ state: "bankAccountNo", value: e }));
             }}
+
+            defaultValue={data.bankAccountNo}
+            // defaultValue="vivek"
           />
         </Form.Item>
 
+{/* vivek */}
         <Form.Item
           label="Bank Name"
           name="Bank Name"
-          rules={[
-            {
-              required: true,
-              message: "Please input the Bank Name!",
-            },
-          ]}
         >
           <Input
             minLength={3}
             onChange={(e) => {
               dispatch(
-                changeGivenState({ state: "bankName", value: e.target.value })
+                changeGivenReState({ state: "bankName", value: e.target.value })
               );
             }}
+
+            defaultValue={data.bankName}
           />
         </Form.Item>
 
         <Form.Item
           label="Bank IFSC code"
           name="Bank IFSC code"
-          value="vivek"
-          rules={[
-            {
-              required: true,
-              message: "Please input the Bank IFSC code!",
-            },
-          ]}
         >
           <Input
             // minLength={3}
             onChange={(e) => {
               dispatch(
-                changeGivenState({
+                changeGivenReState({
                   state: "bankIFSCCode",
                   value: e.target.value,
                 })
               );
             }}
+
+            defaultValue={data.bankIFSCCode}
           />
         </Form.Item>
 
         <Form.Item
           label="Bank Branch"
           name="Bank Branch"
-          rules={[
-            {
-              required: true,
-              message: "Please input the Bank Branch!",
-            },
-          ]}
         >
           <Input
             minLength={3}
             onChange={(e) => {
               dispatch(
-                changeGivenState({ state: "bankBranch", value: e.target.value })
+                changeGivenReState({ state: "bankBranch", value: e.target.value })
               );
             }}
+
+            defaultValue={data.bankBranch}
           />
         </Form.Item>
         <Form.Item>
@@ -132,4 +116,4 @@ const Form3 = () => {
   );
 };
 
-export default Form3;
+export default Form3Rj;

@@ -1,0 +1,66 @@
+.m_eform_active {
+  display: block;
+  margin-top: 30px;
+  /* width: 100%; */
+}
+
+.m_eform_not_active {
+  display: none;
+}
+
+.m-lf-btn-wr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 200px;
+}
+
+.m_eform_page4 {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  gap: 30px;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.m-nj-photo-cnt {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.m-nj-photo-cnt-photo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* justify-content: center; */
+}
+
+.m-nj-photo-cnt-photo > img {
+  border-radius: 5px;
+}
+
+.m-form4-btn {
+  gap: 30px;
+  padding-left: 0;
+  margin-left: -100px;
+}
+
+@media only screen and (max-width: 750px) {
+  .m-lf-btn-wr {
+    padding-left: 0px;
+  }
+
+  .m-nj-photo-cnt {
+    flex-direction: column;
+  }
+
+  .m-form4-btn {
+    margin-left: 00px;
+  }
+}

@@ -2,7 +2,7 @@
   min-height: 120vh;
   height: 100%;
   width: 100vw;
-  background-color: #B6B6B6;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,14 +35,14 @@
   /* margin-bottom: 50px; */
 }
 
-.m-l-f h1 {
+.m-l-f > h1 {
   align-self: center;
   border-bottom: 1px solid;
   font-size: 1.4rem;
   font-weight: 400;
 }
 
-.form-inputs h2 {
+.form-inputs > h2 {
   font-weight: 400;
   font-size: 1rem;
   letter-spacing: 1px;

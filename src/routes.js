@@ -6,8 +6,10 @@ import Admin from "./components/Admin/Admin";
 import AddEmployee from "./components/Admin/AddEmployee/AddEmployee.jsx";
 import NewJoining from "./components/Admin/AddEmployee/NewJoining/NewJoining";
 import ResignLoginPage from "./components/Admin/AddEmployee/Resign/ResignLoginPage";
+import ResignCard from "./components/Admin/AddEmployee/Resign/ResignCard";
 import SalaryOfEmployee from "./components/Admin/SalaryOfEmployee/SalaryOfEmployee";
 import Employee from "./components/Employee/Employee";
+import ReJoining from "./components/Admin/AddEmployee/Rejoining/ReJoining";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,7 +18,7 @@ const router = createBrowserRouter([
 
   {
     path: "/employee/:username",
-    element: <Employee/>,
+    element: <Employee />,
   },
   {
     path: "/admin/",
@@ -34,12 +36,12 @@ const router = createBrowserRouter([
 
   {
     path: "/admin/addEmployee/resign",
-    element: <ResignLoginPage />,
+    element: <ResignCard />,
   },
 
   {
-    path: "/admin/addEmployee/resign",
-    element: "reign",
+    path: "/admin/addEmployee/re-joining",
+    element: <ReJoining/>,
   },
 
   {
@@ -49,7 +51,7 @@ const router = createBrowserRouter([
 
   {
     path: "/admin/salaryOfEmployee",
-    element: <SalaryOfEmployee/>,
+    element: <SalaryOfEmployee />,
   },
 
   {
