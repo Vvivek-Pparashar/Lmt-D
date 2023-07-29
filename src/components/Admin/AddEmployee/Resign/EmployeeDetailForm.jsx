@@ -10,7 +10,8 @@ const EmployeeDetailForm = () => {
           <img
             className="m-ae-resign-profile-pic"
             src={data.passportImage}
-            alt="profile"
+            alt="profilee"
+
           />
           <div className="m-ae-resign-info">
             <div className="m-ae-resign-col-1">
