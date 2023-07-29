@@ -99,18 +99,34 @@ const Form2 = () => {
             },
           ]}
         >
-          <Select
+          <Input
+            minLength={3}
             onChange={(e) => {
-              dispatch(changeGivenState({ state: "state", value: e }));
+              dispatch(
+                changeGivenState({ state: "state", value: e.target.value })
+              );
             }}
-          >
-            <Select.Option value="Book">Book</Select.Option>
-            <Select.Option value="Lab Coat">Lab Coat</Select.Option>
-            <Select.Option value="Electronics">Electronics</Select.Option>
-            <Select.Option value="Clothes">Clothes</Select.Option>
-            <Select.Option value="HouseHold">HouseHold</Select.Option>
-            <Select.Option value="Other">Other</Select.Option>
-          </Select>
+          />
+        </Form.Item>
+
+        <Form.Item
+          label="City"
+          name="city"
+          rules={[
+            {
+              required: true,
+              message: "Please Select city",
+            },
+          ]}
+        >
+          <Input
+            minLength={3}
+            onChange={(e) => {
+              dispatch(
+                changeGivenState({ state: "city", value: e.target.value })
+              );
+            }}
+          />
         </Form.Item>
 
         <Form.Item

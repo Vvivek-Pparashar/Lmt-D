@@ -6,9 +6,10 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { changeReData } from "../../../../slice/reDataSlice";
 
-const ResignLoginPage = ({ handleLoading, handleLogin, loading }) => {
+const ResignLoginPage = ({ handleLoading, handleLogin, loading, heading }) => {
   const dispatch = useDispatch();
   const [data, setData] = useState({ aadhar: "", PAN: "" });
+
   const handleClick = () => {
     console.log("first");
     handleLoading(true);
@@ -33,7 +34,7 @@ const ResignLoginPage = ({ handleLoading, handleLogin, loading }) => {
       <div className="m-l">
         {loading === true ? <LoadingPage /> : ""}
         <div className="m-l-f">
-          <h1>Resign FORM</h1>
+          <h1>{`${heading}`}</h1>
           <div className="form-inputs">
             <label for="userid">Aadhar No.</label>
             <input

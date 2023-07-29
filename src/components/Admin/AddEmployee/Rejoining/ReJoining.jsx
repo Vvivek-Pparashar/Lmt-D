@@ -25,6 +25,7 @@ const ReJoining = () => {
           handleLoading={handleLoading}
           handleLogin={handleLogin}
           loading={loading}
+          heading={"Re-Joining Form"}
         />
       ) : (
         <RejoinAfterLogin />

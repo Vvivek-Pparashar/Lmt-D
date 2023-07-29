@@ -15,6 +15,7 @@ const initialState = {
   fatherName: "",
   address: "",
   state: "",
+  city: "",
   pincode: "",
   dob: "",
   aadharNo: "",
