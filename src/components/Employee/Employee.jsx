@@ -5,6 +5,7 @@ import {useNavigate, useParams } from 'react-router-dom';
 import RadialCharts from "../Chart/RadialCharts"
 import Employee_card from './Employee_card';
 import "./Employee.css"
+import Connect from '../Calendar/connect';
 // import CustomTileContent from '../Calendar/CustomTileContent';
 const Employee = () => {
   const [attendanceCount, setAttendanceCount] = useState(0);   // stored total attendace
@@ -89,7 +90,7 @@ const Employee = () => {
     {/* <CustomTileContent datesToMark={datesToMark} /> */}
 
 
-
+    <Connect/>
       <div>
         <p>Attendance Count: {attendanceCount}</p>
         <button onClick={handleAddAttendance} disabled={isAttendanceMarked}>
